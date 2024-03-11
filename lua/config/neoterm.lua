@@ -1,0 +1,9 @@
+vim.keymap.set('n', '<c-t><c-t>', '<cmd>Ttoggle<cr>', { noremap = true })
+vim.keymap.set('t', '<c-t><c-t>', '<cmd>Ttoggle<cr>', { noremap = true })
+vim.keymap.set('t', '<c-t><c-n>', '<cmd>Ttoggle<cr><cmd>Tnew<cr>', { noremap = true })
+vim.keymap.set('t', '<c-t><c-k>', '<cmd>Tprevious<cr>', { noremap = true })
+vim.keymap.set('t', '<c-t><c-j>', '<cmd>Tnext<cr>', { noremap = true })
+vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { noremap = true })
+vim.g.neoterm_default_mod = 'botright'
+vim.g.neoterm_size = 20
+vim.g.neoterm_autoinsert = 1
