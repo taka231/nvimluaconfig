@@ -1,5 +1,5 @@
 -- encoding
-vim.o.encofing = 'utf-8'
+-- vim.o.encofing = 'utf-8'
 vim.scriptencoding = 'utf-8'
 
 -- visual
@@ -53,5 +53,15 @@ vim.keymap.set('n', 'sh', '<c-w>h', { noremap = true })
 vim.keymap.set('n', 'sj', '<c-w>j', { noremap = true })
 vim.keymap.set('n', 'sk', '<c-w>k', { noremap = true })
 vim.keymap.set('n', 'sl', '<c-w>l', { noremap = true })
+
+-- for ocaml
+vim.api.nvim_create_autocmd({"BufRead"}, {
+  pattern = "*.mly",
+  command = "set filetype=ocaml.menhir"
+})
+vim.api.nvim_create_autocmd({"BufRead"}, {
+  pattern = "*.mll",
+  command = "set filetype=ocaml.ocamllex"
+})
 
 require("lazy_nvim")
