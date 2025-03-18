@@ -45,5 +45,7 @@ noice.setup({
 		myMiniView("No lines in buffer"),
 		myMiniView("search hit .*, continuing at", "wmsg"),
 		myMiniView("E486: Pattern not found", "emsg"),
+		myMiniView("textDocument"),
+    myMiniView("unhandled")
 	},
 })

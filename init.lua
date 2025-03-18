@@ -63,5 +63,10 @@ vim.api.nvim_create_autocmd({"BufRead"}, {
   pattern = "*.mll",
   command = "set filetype=ocaml.ocamllex"
 })
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('turn_off_auto_commenting', {}),
+  pattern = '*',
+  command = [[setlocal fo-=cro]]
+})
 
 require("lazy_nvim")

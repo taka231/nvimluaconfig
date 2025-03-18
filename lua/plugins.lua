@@ -1,49 +1,49 @@
 return {
   {
-    'folke/tokyonight.nvim',
+    "folke/tokyonight.nvim",
     config = function()
       vim.cmd([[colorscheme tokyonight]])
-    end
+    end,
   },
   {
-    'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require('config/telescope')
-    end
+      require("config/telescope")
+    end,
   },
   {
     "nvim-telescope/telescope-frecency.nvim",
     config = function()
-      require("telescope").load_extension "frecency"
+      require("telescope").load_extension("frecency")
     end,
     dependencies = { "kkharji/sqlite.lua" },
   },
   {
-    'nvim-treesitter/nvim-treesitter',
-    event = { 'BufNewFile', 'BufRead' },
+    "nvim-treesitter/nvim-treesitter",
+    event = { "BufNewFile", "BufRead" },
     build = ":TSUpdate",
     config = function()
-      require('config/nvim-treesitter')
-    end
+      require("config/nvim-treesitter")
+    end,
   },
   {
-    'nvim-tree/nvim-web-devicons',
+    "nvim-tree/nvim-web-devicons",
     config = function()
-      require('config/nvim-web-devicons')
-    end
+      require("config/nvim-web-devicons")
+    end,
   },
   {
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     config = function()
-      require('Comment').setup()
-    end
+      require("Comment").setup()
+    end,
   },
   {
-    'norcalli/nvim-colorizer.lua',
+    "norcalli/nvim-colorizer.lua",
     config = function()
-      require('colorizer').setup()
-    end
+      require("colorizer").setup()
+    end,
   },
   {
     "kylechui/nvim-surround",
@@ -53,35 +53,35 @@ return {
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
       })
-    end
+    end,
   },
   {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     config = function()
-      require('config/gitsigns')
-    end
+      require("config/gitsigns")
+    end,
   },
-  'cohama/lexima.vim',
+  "cohama/lexima.vim",
   {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     config = function()
       require("config/bufferline")
-    end
+    end,
   },
   {
-    'rlane/pounce.nvim',
+    "rlane/pounce.nvim",
     config = function()
       vim.keymap.set("n", "m", "<cmd>Pounce<cr>", { noremap = true, silent = true })
-    end
+    end,
   },
   {
-    'windwp/nvim-ts-autotag',
+    "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup()
-    end
+    end,
   },
   {
-    'folke/noice.nvim',
+    "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
       require("config/noice")
@@ -93,13 +93,21 @@ return {
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
-    }
+    },
   },
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
-    opts = {}
+    opts = {},
   },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  --   config = function(_, opts)
+  --     require("lsp_signature").setup(opts)
+  --   end,
+  -- },
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = {
@@ -107,11 +115,11 @@ return {
       { "neovim/nvim-lspconfig" },
       { "hrsh7th/nvim-cmp" },
       { "lukas-reineke/lsp-format.nvim" },
-      { "jay-babu/mason-null-ls.nvim" }
+      { "jay-babu/mason-null-ls.nvim" },
     },
     config = function()
       require("config/mason-lspconfig")
-    end
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -126,54 +134,57 @@ return {
     },
     config = function()
       require("config/nvim-cmp")
-    end
+    end,
   },
+  -- {
+  --   "simrat39/rust-tools.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "mfussenegger/nvim-dap",
+  --   },
+  --   config = function()
+  --     require("config/rust-tools")
+  --   end,
+  -- },
   {
-    "simrat39/rust-tools.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "mfussenegger/nvim-dap"
-    },
-    config = function()
-      require("config/rust-tools")
-    end
+    "mrcjkb/rustaceanvim",
+    version = '^5',
   },
   {
     "nvimdev/lspsaga.nvim",
     config = function()
       require("config/lspsaga")
-    end
+    end,
   },
   {
     "nvim-lualine/lualine.nvim",
     dependencies = {
-      "nvim-tree/nvim-web-devicons"
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
       require("config/lualine")
-    end
+    end,
   },
   {
     "yuttie/comfortable-motion.vim",
     config = function()
       require("config/comfortable-motion")
-    end
+    end,
   },
   {
     "rust-lang/rust.vim",
     config = function()
       vim.g.rustfmt_autosave = 1
-    end
+    end,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     config = function()
       vim.opt.list = true
-      vim.opt.listchars:append "eol:↴"
-      require("ibl").setup {
-      }
-    end
+      vim.opt.listchars:append("eol:↴")
+      require("ibl").setup({})
+    end,
   },
   -- {
   --   "nvim-tree/nvim-tree.lua",
@@ -190,29 +201,29 @@ return {
       require("config/fern")
     end,
     dependencies = {
-      'lambdalisue/nerdfont.vim',
-      'lambdalisue/fern-renderer-nerdfont.vim',
-      'lambdalisue/fern-git-status.vim',
-      'lambdalisue/fern-hijack.vim',
-    }
+      "lambdalisue/nerdfont.vim",
+      "lambdalisue/fern-renderer-nerdfont.vim",
+      "lambdalisue/fern-git-status.vim",
+      "lambdalisue/fern-hijack.vim",
+    },
   },
   {
     "is0n/jaq-nvim",
     config = function()
       require("config/jaq-nvim")
-    end
+    end,
   },
   {
     "kassio/neoterm",
     config = function()
       require("config/neoterm")
-    end
+    end,
   },
   {
     "andymass/vim-matchup",
     config = function()
       -- vim.g.matchup_matchparen_offscreen = { method = "popup" }
-    end
+    end,
   },
   {
     "zbirenbaum/copilot.lua",
@@ -221,11 +232,11 @@ return {
         suggestion = {
           auto_trigger = true,
           keymap = {
-            accept = "<C-l>"
-          }
-        }
+            accept = "<C-l>",
+          },
+        },
       })
-    end
+    end,
   },
   {
     "nvimtools/none-ls.nvim",
@@ -234,12 +245,37 @@ return {
     end,
     dependencies = {
       "nvim-lua/plenary.nvim",
-    }
+    },
   },
   {
     "j-hui/fidget.nvim",
     config = function()
-      require('fidget').setup {}
-    end
+      require("fidget").setup({})
+    end,
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>git", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
+  },
+  {
+    'chomosuke/typst-preview.nvim',
+    lazy = false, -- or ft = 'typst'
+    version = '1.*',
+    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
   }
 }
